@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.airticket.client">
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.ForgetPasswordActivity" />
+        <activity
+            android:name=".ui.FlightActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".ui.GuestActivity" />
+        <activity android:name=".ui.SearchActivity" />
+        <activity android:name=".ui.OrdersActivity" />
+        <activity android:name=".ui.FlightInfoActivity" />
+        <activity android:name=".ui.RefundActivity" />
+
+        <provider
+            android:name=".db.FlightProvider"
+            android:authorities="com.airticket.client.Flight" />
+        <provider
+            android:name=".db.TicketViewProvider"
+            android:authorities="com.airticket.client.TicketView" />
+
+    </application>
+
+</manifest>
